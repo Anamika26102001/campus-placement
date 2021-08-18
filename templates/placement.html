@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Campus Placement Prediction</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	.btn{
+		background: linear-gradient(to bottom right, red, blue);
+		color: white;
+	}
+	.top{
+		margin-top: 100px;
+	}
+	.fform{
+		/*background-color: #340078;*/
+		background-color: #eee;
+		padding: 50px;
+		margin-top: 70px;
+
+	}
+	.heading{
+		background-color: #28015c;
+		padding: 10px;
+		color: white;
+		text-align: center;
+	}
+</style>
+</head>
+<body style="background: linear-gradient(to bottom right, red, blue); background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed;">
+	<div class="col-lg-12 back">
+		<div class="container">
+			<div class="col-lg-5 col-lg-offset-3 top">
+				<div class="col-lg-12 heading">
+					<h3><b>Enter student details</b></h3>
+				</div>
+				
+				<form class="form fform" action="https://campusplacement.azurewebsites.net/prediction" method="post">
+					<div class="form-group">
+						<input type="number" name="Secondary School Percentage" placeholder="Enter Secondary School Percentage" class="form-control" step=0.001>
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="High School Percentage" placeholder="Enter High School Percentage" class="form-control" step=0.001>
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="Degree Percentage" placeholder="Enter Degree Percentage" class="form-control" step=0.001>
+					</div>
+
+					
+
+					<div class="form-group">
+						<input type="number" name="e_test Percenatege" placeholder="Enter E_test Percentage" class="form-control" step=0.001>
+					</div>
+
+
+					<div class="form-group">
+						<input type="number" name="MBA percentage" placeholder="Enter MBA Percenatege" class="form-control" step=0.001>
+					</div>
+				
+					<b>Choose Subject:</b>
+						<input type="radio" name="Subject" value=Commerce> Commerce
+						<input type="radio" name="Subject" value=Science> Science
+						<input type="radio" name="Subject" value=Arts> Arts 
+						<br> <br>
+
+						<b>Choose Gender: </b>
+						<input type="radio" name="gender" value='M'> Male
+						<input type="radio" name="gender" value='F'> Female
+						<br> <br>
+
+						<b>Do you have any Work Experience: </b>
+						<input type="radio" name="experience" value="Yes"> Yes
+						<input type="radio" name="experience" value="No"> No
+						<br><br>
+
+						<b>Choose your Feild of Education: </b><br> <br>
+						<input type="radio" name="education" value="Comm&Mgmt"> Comm&Mgmt <br> <br>
+						<input type="radio" name="education" value="Sci&Tech"> Sci&Tech<br> <br>
+						<input type="radio" name="education" value="Others"> Others<br> <br>
+
+						<b>Choose your Specialisation: </b>
+						<input type="radio" name="Specialisation" value='Mkt&HR'> Mkt&HR
+						<input type="radio" name="Specialisation" value='Mkt&Fin'> Mkt&Fin
+						<br> <br>
+
+					<div class="form-group">
+						<input type="submit" name="submit" value="Submit" class="btn btn-md">
+					</div>
+
+					<div class="form-group">
+						<b>Predicted Placement: </b> {{ output }}
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
